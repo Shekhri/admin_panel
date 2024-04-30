@@ -50,14 +50,19 @@ function Boss() {
       e.target.Nfac.value = null
       e.target.Wactivity.value = null
       e.target.daf.value = null
-      window.location.reload()
+      setTimeout(() => {
+         window.location.reload()
+      }, 2000);
     }
     const HandleDelete = (e) => {
       e.preventDefault();
       axios.delete(`https://apiastro1.vtormetallmm.ru/leaderships/${e.target.value}`)
       axios.get(`https://apiastro1.vtormetallmm.ru/leaderships`)
       .then((data) => setData(data))
-      window.location.reload()
+      setTimeout(() => {
+         window.location.reload()
+      }, 2000);
+      
   }
    return(
       <>
