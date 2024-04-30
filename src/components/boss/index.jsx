@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styles from './style.module.css'
 import axios from "axios";
+import { Button } from "@mui/material";
 
 function Boss() {
    const [data, setData] = useState([]);
    const [postData, setPostData] = useState([]);
+   const [elemId, setElemId] = useState()
    const [Name, setName] = useState([])
      useEffect(()=> {
       axios.get(`https://apiastro1.vtormetallmm.ru/leaderships`)
@@ -62,7 +64,9 @@ function Boss() {
       setTimeout(() => {
          window.location.reload()
       }, 2000);
-      
+  }
+  const HandleUpdate = () => {
+  console.log(data.id);
   }
    return(
       <>
@@ -107,6 +111,10 @@ function Boss() {
       <p>{elem.work_activity}</p>
       <p>{elem.duties_and_functions}</p>
       <button value={elem.id} onClick={HandleDelete}>O`chirish</button>
+      <button onClick={() => {
+         setElemId(elem.id)
+         console.log(elemId);
+      }}>Update</button>
       </div>
       </>
       )}
