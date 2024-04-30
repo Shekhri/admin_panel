@@ -101,25 +101,25 @@ function Boss() {
       <>
       <div className={styles.Form}>
          <form onSubmit={HandlePost} >
-            <input type="text" placeholder="Ismi" name="Name" className={styles.Form__inp} />
+            <input type="text" placeholder="Ism" name="Name" className={styles.Form__inp} />
             <br />
-            <input type="text" placeholder="Lavozimi" name="Position" className={styles.Form__inp} />
+            <input type="text" placeholder="Lavozim" name="Position" className={styles.Form__inp} />
             <br />
-            <input type="text" name="Pnumber" className={styles.Form__inp} />
+            <input type="text" placeholder="Telefon raqam" name="Pnumber" className={styles.Form__inp} />
             <br />
-            <input type="text" name="Email" className={styles.Form__inp} />
+            <input type="text" placeholder="Elektron pochta" name="Email" className={styles.Form__inp} />
             <br />
-            <input type="text"name="Rdays" className={styles.Form__inp} />
+            <input type="text"name="Rdays" placeholder="Qabul kunlari" className={styles.Form__inp} />
             <br />
-            <input type="text"name="Ntg" className={styles.Form__inp} />
+            <input type="text"name="Ntg" placeholder="Telegram sahifasi" className={styles.Form__inp} />
             <br />
-            <input type="text"name="Ninst" className={styles.Form__inp} />
+            <input type="text"name="Ninst" placeholder="Instagram sahifasi" className={styles.Form__inp} />
             <br />
-            <input type="text"name="Nfac" className={styles.Form__inp} />
+            <input type="text"name="Nfac" placeholder="Facebook sahifasi" className={styles.Form__inp} />
             <br />
-            <input type="text"name="Wactivity" className={styles.Form__inp} />
+            <input type="text"name="Wactivity" placeholder="Ish faoliyati" className={styles.Form__inp} />
             <br />
-            <input type="text"name="daf" className={styles.Form__inp} />
+            <input type="text"name="daf" placeholder="Vazifa va funksiyalari" className={styles.Form__inp} />
             <button type="submit">Jo`natish</button>
             {
       }
