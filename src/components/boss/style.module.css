@@ -1,0 +1,13 @@
+
+input{
+background-color: lightblue;
+color: aliceblue;
+border: 2px solid black;
+}
+h1{
+    color: black;
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+}
