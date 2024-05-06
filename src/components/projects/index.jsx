@@ -9,28 +9,25 @@ function Products() {
    const [elemId, setElemId] = useState()
    const [Name, setName] = useState(false)
    useEffect(()=> {
-      axios.get(`https://apiastro1.vtormetallmm.ru/projects`)
+      axios.get(`http://localhost:8000/Books`)
       .then((data) => setData(data))
     }, [])
    const HandlePost = (e) => {
       e.preventDefault()
       const body = {
-         name : e.target.Name.value,
-         position : e.target.Position.value,
-         phone_number : e.target.Pnumber.value,
+         img : e.target.img.value,
+         price : e.target.price.value,
+         name : e.target.name.value,
+         author : e.target.author.value
       }
-      axios.post(`https://apiastro1.vtormetallmm.ru/projects`, body)
+      axios.post(`http://localhost:8000/Books`, body)
       .then((data) => setPostData(data))
-      axios.get(`https://apiastro1.vtormetallmm.ru/projects`)
+      axios.get(`http://localhost:8000/Books`)
       .then((data) => setData(data))
-      console.log(
-         e.target.Name.value,
-         e.target.Position.value,
-         e.target.Pnumber.value,
-      );
-      e.target.Name.value = null
-      e.target.Position.value = null
-      e.target.Pnumber.value = null
+      e.target.img.value = null
+      e.target.price.value = null
+      e.target.name.value = null
+      e.target.author.value = null
 
       setTimeout(() => {
          window.location.reload()
@@ -38,8 +35,8 @@ function Products() {
     }
     const HandleDelete = (e) => {
       e.preventDefault();
-      axios.delete(`https://apiastro1.vtormetallmm.ru/projects/${e.target.value}`)
-      axios.get(`https://apiastro1.vtormetallmm.ru/projects`)
+      axios.delete(`http://localhost:8000/Books/${e.target.value}`)
+      axios.get(`http://localhost:8000/Books`)
       .then((data) => setData(data))
       setTimeout(() => {
          window.location.reload()
@@ -48,21 +45,23 @@ function Products() {
    return(
       <><div className={styles.conatiner}>
           <div className={styles.forma}>
-         <h1 className={styles.h1t}>Ma'lumot o'shish</h1>
+         <h1 className={styles.h1t}>Sotuvdagi kitoblar</h1>
          <form className={styles.formaa} onSubmit={HandlePost}>
-            <input className={styles.inputf} required type="text" placeholder="Title ni kriting" />
-            <input className={styles.inputf} required type="text" placeholder="Descriptionni kriting" />
-            <input className={styles.inputf} required type="number" placeholder="Date ni kriting" />
+            <input className={styles.inputf} required type="text" name="img" placeholder="Rasm linkini kiriting" />
+            <input className={styles.inputf} required type="text" name="price" placeholder="Kitob narxini kiriting" />
+            <input className={styles.inputf} required type="text" name="name" placeholder="Kitob nomini kiriting" />
+            <input className={styles.inputf} required type="text" name="author" placeholder="Kitob muallifini kiriting" />
             <button className={styles.inputb} type="submit">Jo'natish</button>
          </form>
       </div>
-      <div className={styles.cards}>
+      <div className={styles.cards} style={{flexWrap: `wrap`, display : `flex`, justifyContent : `space-between`}}>
       {data?.data?.map((elem, index) =>
       <>
       <div>
-      <h1>{elem.title}</h1>
-      <p>{elem.description}</p>
-      <p>{elem.date}</p>
+         <img style={{width : `100px`, height:`200px`}} src={elem.img} alt="" />
+      <h1>{elem.price}</h1>
+      <p>{elem.name}</p>
+      <p>{elem.author}</p>
       <button className={styles.buttond} value={elem.id} onClick={HandleDelete}>O`chirish</button>
      
       </div>

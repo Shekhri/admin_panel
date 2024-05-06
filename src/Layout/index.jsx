@@ -126,55 +126,6 @@ export default function Sidebar({children}) {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
-        <Divider />
-        <List>
-        <ListItem key={"Boss"} disablePadding sx={{ display: 'block' }}>
-
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick = {() => navigate("/boss")}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Boss"} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-        </List>
-        <List>
-        <ListItem key={"Chances"} disablePadding sx={{ display: 'block' }}>
-
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick = {() => navigate("/chances")}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                <DescriptionIcon />
-                </ListItemIcon>
-                <ListItemText primary={"Chances"} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-        </List>
         <List>
         <ListItem key={"Contact"} disablePadding sx={{ display: 'block' }}>
 
@@ -195,31 +146,7 @@ export default function Sidebar({children}) {
                 >
                 <DescriptionIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Contact"} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-        </List>
-        <List>
-        <ListItem key={"News"} disablePadding sx={{ display: 'block' }}>
-
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                onClick = {() => navigate("/news")}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                <DescriptionIcon />
-                </ListItemIcon>
-                <ListItemText primary={"News"} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Hot Sale"} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
         </List>
@@ -243,7 +170,7 @@ export default function Sidebar({children}) {
                 >
                 <DescriptionIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Projects"} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText primary={"Books"} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
         </List>
