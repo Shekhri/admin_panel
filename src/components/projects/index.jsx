@@ -8,6 +8,7 @@ function Products() {
    const [putData, setPutData] = useState([])
    const [elemId, setElemId] = useState()
    const [Name, setName] = useState(false)
+   const [open, setOpen] = useState(false)
    useEffect(()=> {
       axios.get(`http://localhost:8000/Books`)
       .then((data) => setData(data))
@@ -42,6 +43,28 @@ function Products() {
          window.location.reload()
       }, 2000);
   }
+  const handleSubmitEdit = (e) => {
+   e.preventDefault()
+   setOpen(true)
+   const body = {
+     img: e.target.imgPut.value,
+     price: e.target.pricePut.value,
+     name: e.target.namePut.value,
+     author: e.target.aythorPut.value
+   };
+
+   axios.put(`http://localhost:8000/images/${e.target.id}`, body)
+     .then((data) => setData(data))
+     setTimeout(() => {
+      window.location.reload()
+   }, 2000);
+   e.target.imgPut.value = null
+   e.target.pricePut.value = null
+   e.target.namePut.value = null
+   e.target.aythorPut.value = null
+   axios.get(`http://localhost:8000/Books`)
+   .then((data) => setData(data))
+ };
    return(
       <><div className={styles.conatiner}>
           <div className={styles.forma}>
@@ -58,11 +81,26 @@ function Products() {
       {data?.data?.map((elem, index) =>
       <>
       <div>
+         {open == true ?
+         <>
          <img style={{width : `100px`, height:`200px`}} src={elem.img} alt="" />
-      <h1>{elem.price}</h1>
-      <p>{elem.name}</p>
-      <p>{elem.author}</p>
-      <button className={styles.buttond} value={elem.id} onClick={HandleDelete}>O`chirish</button>
+            <h1>{elem.price}</h1>
+            <p>{elem.name}</p>
+            <p>{elem.author}</p>
+            <button className={styles.buttond} value={elem.id} onClick={HandleDelete}>O`chirish</button>
+            <button onClick={HandlePost}>Edit</button>
+            </>
+            : 
+            <>
+            <input type="text" defaultValue={elem.img} name="imgPut" placeholder="Rasmni linkini kiriting"/>
+            <input type="text" defaultValue={elem.price} name="pricePut" placeholder="Kitob narxini kiriting" />
+            <input type="text" defaultValue={elem.name} name="namePut" placeholder="Kitob nomini kiriting" />
+            <input type="text" defaultValue={elem.author} name="authorPut" placeholder="Muallifni kiriting" />
+            <p>{elem.name}</p>
+            <p>{elem.author}</p>
+            <button className={styles.buttond} value={elem.id} onClick={HandleDelete}>O`chirish</button>
+            </>
+         }
      
       </div>
       </>

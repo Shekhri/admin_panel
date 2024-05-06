@@ -39,7 +39,7 @@ export const dataRouter = [
     },
     {
         id : 7,
-        path : "/projects",
+        path : "/",
         element : <Projects/>
     }
 ]

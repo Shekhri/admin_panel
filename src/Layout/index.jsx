@@ -159,7 +159,7 @@ export default function Sidebar({children}) {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                onClick = {() => navigate("/projects")}
+                onClick = {() => navigate("/")}
               >
                 <ListItemIcon
                   sx={{
