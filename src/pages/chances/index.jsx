@@ -6,7 +6,7 @@ import Sidebar from "../../Layout";
 function ChancesPage() {
    return(
       <Sidebar>
-         <Chances /> 
+         <Chances/>
       </Sidebar>
    )
 }

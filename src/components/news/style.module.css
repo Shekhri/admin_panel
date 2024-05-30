@@ -1,0 +1,159 @@
+.section {
+    border: 3px solid rgb(44, 125, 255);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.AddBoxIcon {
+    color: rgb(0, 81, 167);
+    margin-top: 20px;
+}
+
+.cards {
+    width: 100%;
+    ;
+}
+
+.card__item {
+    width: 370px;
+}
+
+.cardd__h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+}
+
+.hr {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 115, 237);
+    height: 3px;
+    width: 100%;
+}
+
+.card {
+    padding: 16px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__left {
+    display: flex;
+    justify-content: end;
+}
+.card__right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.img {
+    width: 20%;
+    height: 210px;
+    border-radius: 40%;
+}
+
+.card__h2 {
+    font-size: 18px;
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+}
+
+.card__p {
+    font-size: 18px;
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+}
+
+.card__h3 {
+    font-size: 18px;
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+}
+
+.card__button {
+    display: block;
+    width: 180px;
+    height: 40px;
+    border-radius: 16px;
+    background-color: rgb(43, 43, 43);
+    border: none;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: Montserrat;
+    color: white;
+}
+.table{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.button{
+    margin-top: 25px;
+    
+}
+.card__modal {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.modal__item {
+    display: flex;
+    justify-content: end;
+}
+
+.input__top {
+    margin-bottom: 15px;
+    border: 3px solid rgb(44, 125, 255);
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Montserrat;
+    color: rgb(1, 1, 1);
+}
+.button__card{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card__modal__button {
+    width: 180px;
+    height: 50px;
+    border-radius: 16px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-family: Montserrat;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border: 3px solid rgb(0, 95, 163);
+
+}
+
+.input {
+    width: 80%;
+    border: 2px solid rgb(102, 102, 102);
+    border-radius: 8px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.modal__button {
+    width: 70px;
+    height: 30px;
+    background-color: black;
+    font-family: Montserrat;
+    margin-left: 20px;
+    border-radius: 5px;
+    color: aliceblue;
+}

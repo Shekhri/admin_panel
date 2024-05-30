@@ -4,7 +4,7 @@ function RouterComponent() {
    return(
       <Routes>
          {dataRouter.map((elem, index) =>
-            <Route key={index} path={elem.path} element={elem.element} />            
+            <Route key={index} path={elem.link} element={elem.element} />            
          )}
       </Routes>
    )
